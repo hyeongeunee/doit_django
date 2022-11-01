@@ -12,3 +12,7 @@ class Post(models.Model):
     def __str__(self):
         return f'[{self.id}] {self.title}'
     # str > 개체로 찍을 때 뭐로 찍으면 좋을까 ~
+    
+    def get_absolute_url(self):
+        return f'/blog/{self.pk}/'
+    
