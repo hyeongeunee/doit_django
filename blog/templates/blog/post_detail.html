@@ -67,6 +67,9 @@
                     <header class="mb-4">
                         <!-- Post title-->
                         <h1 class="fw-bolder mb-1">{{post.title}}</h1>
+                        {%if post.hook_text%}
+                            <h5 class="text-muted">{{post.hook_text}}</h5>
+                        {%endif%}
                         <!-- Post meta content-->
                         <div class="text-muted fst-italic mb-2">{{p.created_at}} by Start Bootstrap</div>
                         <!-- Post categories-->
@@ -92,15 +95,15 @@
                             Download:
 
                             {%if post.get_file_ext == 'csv'%}
-                                <i class="fas fa-file-csv"></i>
+                                <i class="fa-solid fa-file-csv"></i>
                             {%elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls'%}
-                                <i class="fas fa-file-excel"></i>
+                                <i class="fa-solid fa-file-excel"></i>
                             {%elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc'%}
-                                <i class="fas fa-file-word"></i>
+                                <i class="fa-solid fa-file-word"></i>
                             {%else%}
-                                <i class="far fa-file"></i>
+                                <i class="fa-solid fa-file"></i>
                             {%endif%}
-                                {{post.get_file_name}}
+                            {{post.get_file_name}}
                         </a>
                     </div>
                     {%endif%}
