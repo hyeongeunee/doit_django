@@ -14,10 +14,10 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     #author : 추후 작성 예정
     
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, null = True, on_delete=models.SET_NULL)
     
     def __str__(self):
-        return f'[{self.id}] {self.title} :: {{self.author}}'
+        return f'[{self.id}] {self.title} :: {self.author}'
     # str > 개체로 찍을 때 뭐로 찍으면 좋을까 ~
     
     def get_absolute_url(self):
